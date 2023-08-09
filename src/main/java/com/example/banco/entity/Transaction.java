@@ -18,7 +18,7 @@ public class Transaction implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String type;
-    private Float value;
+    private Double value;
     private String description;
     @JsonBackReference
     @ManyToOne

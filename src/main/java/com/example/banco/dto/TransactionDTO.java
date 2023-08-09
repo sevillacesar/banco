@@ -13,7 +13,7 @@ public class TransactionDTO implements Serializable {
     private static final long serialVersionUID = 1L;
     private Integer id;
     private String type;
-    private Float value;
+    private Double value;
     private String description;
     private Integer accountId;
 }

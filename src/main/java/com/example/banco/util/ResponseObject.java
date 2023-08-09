@@ -9,11 +9,8 @@ import org.springframework.http.HttpStatus;
 @Setter
 public class ResponseObject {
     private String status;
-
     private HttpStatus code;
-
     private Object data;
-
     private String message;
 
     public int getCode() {

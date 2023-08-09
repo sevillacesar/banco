@@ -17,5 +17,6 @@ public class AccountDTO implements Serializable {
     private String accountCode;
     private Date createdDate;
     private Integer userId;
+    private Double balance;
     private List<TransactionDTO> transactions;
 }
