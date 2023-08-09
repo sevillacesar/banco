@@ -1,0 +1,46 @@
+CREATE TABLE USERS (
+    id SERIAL PRIMARY KEY,
+		code VARCHAR(9) NOT NULL,
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    age INTEGER NOT NULL,
+		user_type VARCHAR(1) NOT NULL,
+		position VARCHAR(100)
+);
+
+CREATE TABLE ACCOUNTS (
+    id SERIAL PRIMARY KEY,
+    account_code VARCHAR(100),
+    created_date DATE,
+    user_id INTEGER NOT NULL,
+    CONSTRAINT FK_ACCOUNTS_USERS FOREIGN KEY (user_id) REFERENCES USERS (id)
+);
+
+CREATE TABLE TRANSACTIONS (
+	id SERIAL PRIMARY KEY,
+	type VARCHAR(1) NOT NULL,
+	value FLOAT NOT NULL,
+	description VARCHAR(100) NOT NULL,
+	account_id INTEGER NOT NULL,
+	CONSTRAINT FK_TRANSACTIONS_ACCOUNTS FOREIGN KEY (account_id) REFERENCES TRANSACTIONS (id)
+);
+
+DROP TABLE TRANSACTIONS;
+DROP TABLE ACCOUNTS;
+DROP TABLE USERS;
+
+SELECT * FROM USERS;
+
+SELECT * FROM ACCOUNTS;
+
+SELECT * FROM ADDRESSES;
+
+INSERT INTO USERS (code, firstname, lastname, age, user_type, position)
+VALUES ('001384529', 'Jaimito', 'Perez', 38, 'C', null),
+VALUES ('008283819 ', 'Luis', 'Mendoza', 31, 'E', 'Desarrollador');
+
+
+
+
+
+
